@@ -313,3 +313,13 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 }
 #endif
 DELETE THIS LINE TO UNCOMMENT (2/2) */
+
+
+#ifdef RGBLIGHT_ENABLE
+void keyboard_post_init_user(void) {
+  rgblight_enable_noeeprom(); // Enables RGB, without saving settings
+  rgblight_sethsv_noeeprom(HSV_CHARTREUSE);
+  rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
+}
+#endif
+
